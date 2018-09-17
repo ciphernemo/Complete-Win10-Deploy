@@ -23,16 +23,22 @@ For a complete guide on installing both ADK and MDT, [TechRepublic has thorough 
 #### For those new to MDT:
 1. Launch MDT and create a new deployment share. For network shares and deploying across a network, [Microsoft's MDT Guide](https://docs.microsoft.com/en-us/windows/deployment/deploy-windows-mdt/get-started-with-the-microsoft-deployment-toolkit) is a thorough, well-written guide. If you don't want to use a network share, saving it locally in a new folder will work just fine. For local deployment shares, you can later copy them to a flash drive or other portable storage for hands-on deployments. At my workplace we prefer to keep things simple since we support less than 50 systems, and thus our deployments are small batches of a few at one time. If you need to deploy to dozens and dozens of systems at once, a network deployment would be ideal.
 2. Save your new deployment share and note its location. The new share will contain common folders such as "Control" and "Scripts".
-4. As per MDT practices, add your desired [source Windows media](https://web.sas.upenn.edu/jasonrw/2015/11/02/mdt-importing-an-operating-system/), [drivers](https://web.sas.upenn.edu/jasonrw/2016/09/25/mdt-and-drivers/), [applications](https://www.techrepublic.com/article/how-to-deploy-applications-with-microsoft-deployment-toolkit/), and [task sequences](https://web.sas.upenn.edu/jasonrw/2016/10/20/creating-task-sequences-for-mdt/).
+3. Create a default [Task Sequence](https://web.sas.upenn.edu/jasonrw/2016/10/20/creating-task-sequences-for-mdt/) and note its name.
+4. As per MDT practices, add your desired [source Windows media](https://web.sas.upenn.edu/jasonrw/2015/11/02/mdt-importing-an-operating-system/), [drivers](https://web.sas.upenn.edu/jasonrw/2016/09/25/mdt-and-drivers/), and [applications](https://www.techrepublic.com/article/how-to-deploy-applications-with-microsoft-deployment-toolkit/).
 5. Exit MDT.
 6. Continue with steps below... 
 #### For those with Existing MDT Deployment Shares:
-1. Download all all files included within this project and copy them to the respective folders of your deployment share. For example, if your deployment share is "D:\Deploy", then everything in the "Scripts" folder for this project should be copied over to D:\Deploy\Scripts. For files that already exist, I'd encourage you to make a backup of your version before copying this project's version. To do so, simply either rename the file (eg: "CustomSettings.ini" to "CustomSettings.original.ini") or copy it to another location.
+1. Download all all files included within this project and copy over A SELECT FEW of them to the respective folders of your deployment share. For example, if your deployment share is "D:\Deploy", then everything in the "Scripts" folder for this project should be copied over to D:\Deploy\Scripts. For files that already exist, I'd encourage you to make a backup of your version before copying this project's version. To do so, simply either rename the file (eg: "CustomSettings.ini" to "CustomSettings.original.ini") or copy it to another location. Note the following files and their usage:
+    * Scripts folder: every file in this folder is safe to copy, as not stock files overwritten.
+    * Control folder: CustomSettings.ini overwrites existing file. Please edit this file as appropriate for your own settings.
+    * Control\MY_TASK_SEQ: This folder's name will reflect your own Task Sequence name. Use the Unattend.xml as a reference for changes you can make to your own Unattend.xml file. Do not copy this file. Instead reference it and make changes accordingly The entire oobeSystem section should be tweaked to your own settings.
 2. Launch MDT and confirm that your saved deployment share loads without any errors.
 3. Optional: change MDT's branding to reflect your organization or desired branding. This includes the following files:
     * Deploy\Scripts\LiteTouch.wsf -- replace organization name for _SMTSPAckageName
     * Deploy\Scripts\UDIWizard_Config.xml -- change welcome text
-    * Deploy\Scripts\
+    * Deploy\Control\CustomSettings.ini -- add organization's name to a new variable _SMSTSORGNAME
+    * Deploy\Control\MY_TASK_SEQ -- Your Task Sequence name will appear as a folder under the Control folder. Change the XML item "RegisteredOrganization" to your organization's name.
+    * %PROGRAMFILES%\Microsoft Deployment Toolkit\Samples\Background.bmp -- You can edit this image to add your own branding. Make sure you do not change the image dimensions or format. Note that this image will be stretched to fill your Windows PE boot environment's screen.
 
 ## References
 
