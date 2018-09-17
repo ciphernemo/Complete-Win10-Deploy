@@ -37,7 +37,7 @@
 				<SkipUserOOBE>true</SkipUserOOBE>
 				<HideOEMRegistrationScreen>true</HideOEMRegistrationScreen>
 			</OOBE>
-			<RegisteredOrganization>MY Organization</RegisteredOrganization>
+			<RegisteredOrganization>My Organization</RegisteredOrganization>
 			<RegisteredOwner>My User</RegisteredOwner>
 			<TimeZone>Eastern Standard Time</TimeZone>
 		</component>
