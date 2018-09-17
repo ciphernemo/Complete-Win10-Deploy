@@ -10,8 +10,6 @@ For those familiar with deploying via MDT, perhaps some of these files will help
 
 ## Getting Started
 
-First you will need to download and install Windows 10 Assessment and Deployment Toolkit (ADK) and Microsoft Deployment Toolkit (MDT), in that order.
-
 ### Prerequisites and their Installation
 
 1. [Windows 10 version 1803 or later](https://support.microsoft.com/en-us/help/4099479) -- This project currently tested with Windows 10 Pro 64-bit 1803 from an Windows 10 Education source media that includes all Windows 10 editions.
@@ -23,12 +21,13 @@ For a complete guide on installing both ADK and MDT, [TechRepublic has thorough 
 ### Using This Project
 
 #### For those new to MDT:
-1. Launch MDT and create a new deployment share. For network shares and deploying across a network, [Microsoft's MDT Guide](https://docs.microsoft.com/en-us/windows/deployment/deploy-windows-mdt/get-started-with-the-microsoft-deployment-toolkit) is a thorough, well-written guide. If you don't want to use a network share, saving it locally in a new folder will work just fine. For local deployment shares, you can later copy them to a flash drive or other portable storage for hands-on deployments. At my workplace we prefer to keep things simple since we support less than 50 systems, and thus our deployments are small batches of a few at one time. If you need to deploy to dozens and dozens of systems at once, a network deployment would be ideal.
-2. Save your new deployment share and note its location. The new share will contain common folders such as "Control" and "Scripts".
-3. Create a default [Task Sequence](https://web.sas.upenn.edu/jasonrw/2016/10/20/creating-task-sequences-for-mdt/) and note its name.
-4. As per MDT practices, add your desired [source Windows media](https://web.sas.upenn.edu/jasonrw/2015/11/02/mdt-importing-an-operating-system/), [drivers](https://web.sas.upenn.edu/jasonrw/2016/09/25/mdt-and-drivers/), and [applications](https://www.techrepublic.com/article/how-to-deploy-applications-with-microsoft-deployment-toolkit/).
-5. Exit MDT.
-6. Continue with steps below... 
+1. You will need to download and install Windows 10 Assessment and Deployment Toolkit (ADK) and Microsoft Deployment Toolkit (MDT), in that order.
+2. Launch MDT and create a new deployment share. For network shares and deploying across a network, [Microsoft's MDT Guide](https://docs.microsoft.com/en-us/windows/deployment/deploy-windows-mdt/get-started-with-the-microsoft-deployment-toolkit) is a thorough, well-written guide. If you don't want to use a network share, saving it locally in a new folder will work just fine. For local deployment shares, you can later copy them to a flash drive or other portable storage for hands-on deployments. At my workplace we prefer to keep things simple since we support less than 50 systems, and thus our deployments are small batches of a few at one time. If you need to deploy to dozens and dozens of systems at once, a network deployment would be ideal.
+3. Save your new deployment share and note its location. The new share will contain common folders such as "Control" and "Scripts".
+4. Create a default [Task Sequence](https://web.sas.upenn.edu/jasonrw/2016/10/20/creating-task-sequences-for-mdt/) and note its name.
+5. As per MDT practices, add your desired [source Windows media](https://web.sas.upenn.edu/jasonrw/2015/11/02/mdt-importing-an-operating-system/), [drivers](https://web.sas.upenn.edu/jasonrw/2016/09/25/mdt-and-drivers/), and [applications](https://www.techrepublic.com/article/how-to-deploy-applications-with-microsoft-deployment-toolkit/).
+6. Exit MDT.
+7. Continue with steps below... 
 #### For those with Existing MDT Deployment Shares:
 1. Download all all files included within this project and copy over A SELECT FEW of them to the respective folders of your deployment share. For example, if your deployment share is "D:\Deploy", then everything in the "Scripts" folder for this project should be copied over to D:\Deploy\Scripts. For files that already exist, I'd encourage you to make a backup of your version before copying this project's version. To do so, simply either rename the file (eg: "CustomSettings.ini" to "CustomSettings.original.ini") or copy it to another location. Note the following files and their usage:
     * Scripts folder: every file in this folder is safe to copy, as no stock files overwritten.
