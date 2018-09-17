@@ -212,7 +212,7 @@ $accessGUIDs=@(
 )
 foreach ($accessGUID in $accessGUIDs)
 {
-	if (!(Test-Path "$CUWinCurDev\$accessGUID")) { New-Item -Path "$CUWinCurDev" -Name "$accessGUID" -Force | out-null }q
+	if (!(Test-Path "$CUWinCurDev\$accessGUID")) { New-Item -Path "$CUWinCurDev" -Name "$accessGUID" -Force | out-null }
 	New-ItemProperty -Path "$CUWinCurDev\$accessGUID" -Name Value -PropertyType String -Value DENY -Force | out-null
 	New-Item -Path "$UWinCurDev" -Name "$accessGUID" -Force | out-null
 	New-ItemProperty -Path "$UWinCurDev\$accessGUID" -Name Value -PropertyType String -Value DENY -Force | out-null
