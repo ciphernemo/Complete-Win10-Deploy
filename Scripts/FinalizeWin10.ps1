@@ -73,7 +73,7 @@ Write-Verbose "$currentAct ..."
 Write-Progress -Activity $overallAct -Status $currentAct -Id 2
 reg.exe LOAD "HKU\DefaultUser" "$env:SYSTEMDRIVE\Users\Default\NTUSER.DAT" | out-null
 
-# ----------[ Install WiFiDisable Scheduled Task ]------------------------------------------------------------------------------------
+# ----------[ Install WiFiDisable Scheduled Task ]-------------------------------------------------------------------------------------
 [string]$currentAct = "Installing scheduled tasks"
 Write-Verbose "$currentAct ..."
 Write-Progress -Activity $overallAct -Status $currentAct -Id 3
@@ -212,7 +212,7 @@ $accessGUIDs=@(
 )
 foreach ($accessGUID in $accessGUIDs)
 {
-	if (!(Test-Path "$CUWinCurDev\$accessGUID")) { New-Item -Path "$CUWinCurDev" -Name "$accessGUID" -Force | out-null }
+	if (!(Test-Path "$CUWinCurDev\$accessGUID")) { New-Item -Path "$CUWinCurDev" -Name "$accessGUID" -Force | out-null }q
 	New-ItemProperty -Path "$CUWinCurDev\$accessGUID" -Name Value -PropertyType String -Value DENY -Force | out-null
 	New-Item -Path "$UWinCurDev" -Name "$accessGUID" -Force | out-null
 	New-ItemProperty -Path "$UWinCurDev\$accessGUID" -Name Value -PropertyType String -Value DENY -Force | out-null
@@ -399,7 +399,7 @@ foreach ($svc in $svcs)
 	$ProgressPreference = "Continue"
 }
 
-# ----------[ Apps & App Provisioning (Windows 10 Version 1803) ]--------------------------------------------------------
+# ----------[ Apps & App Provisioning (Windows 10 Version 1803) ]----------------------------------------------------------------------
 [string]$currentAct = "Removing built-in apps and their provisioning"
 Write-Verbose "$currentAct :"
 $i = 0
