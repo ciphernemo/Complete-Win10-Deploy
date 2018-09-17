@@ -14,7 +14,7 @@ First you will need to download and install Windows 10 Assessment and Deployment
 
 1. [Windows 10 version 1803 or later](https://support.microsoft.com/en-us/help/4099479) -- This project currently tested with Windows 10 Pro 64-bit 1803 from an Windows 10 Education source media that includes all Windows 10 editions.
 2. [Microsoft Deployment Toolkit](https://www.microsoft.com/en-us/download/details.aspx?id=54259)
-3. If you are working in a Windows 7 environment, you'll want [Windows Assessment and Deployment Toolkit for Win10 version 1511](http://renshollanders.nl/2016/12/download-windows-adk-the-numerous-versions-of-microsoft-windows-adk-assessment-and-planning-toolkit-and-where-to-find-them/). Otherwise if your working evnrionment is a Windows 10 system, you'll want the latest [Windows ADK for Win10](https://docs.microsoft.com/en-us/windows-hardware/get-started/adk-install).
+3. If you are working in a Windows 7 environment, you'll want [Windows Assessment and Deployment Toolkit for Win10 version 1511](http://renshollanders.nl/2016/12/download-windows-adk-the-numerous-versions-of-microsoft-windows-adk-assessment-and-planning-toolkit-and-where-to-find-them/). Otherwise if your working evnrionment is a Windows 10 system (possibly 8.1 also?), you'll want the latest [Windows ADK for Win10](https://docs.microsoft.com/en-us/windows-hardware/get-started/adk-install).
 
 For a complete guide on installing both ADK and MDT, [TechRepublic has thorough step-by-step instructions](https://www.techrepublic.com/article/how-to-set-up-microsoft-deployment-toolkit-step-by-step/)
 
