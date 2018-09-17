@@ -2,6 +2,8 @@
 
 A thorough, anti-telemetry, anti-bloatware Windows 10 deployment for business and power users. This is currently in use at my workplace as we are doing a late Windows 7 to 10 transition. We wanted to a smooth deployment that doesn't require the latest version of Windows 10 ADK so that it can be edited and maintained from a Windows 7 system (any ADK after Win 10 version 1511 is incompatible with Windows 7 when updating Media Content).
 
+Most of the work for this project is done in the Scripts\FinalizeWin10.ps1 script file. Other smaller, but key changes are made in other files.
+
 This project was created and shared with the world because too often IT Techs, System Admins, and DevOps responsible for deployments do not share their entire deployment solution. Many of us are forced to learn through trial & error, with a generous helping troubleshooting and searching online. We'll run into common issues the majority also faces, yet only a handful will choose to share their solutions online. At best it's a piecemeal scattering we'll be forced to cobble together on our own.
 
 For those familiar with deploying via MDT, perhaps some of these files will help solve issues they've faced in their deployments. If this "Complete-Win10-Deploy" project helps at least one IT person, then it was all worth it.
@@ -29,7 +31,7 @@ For a complete guide on installing both ADK and MDT, [TechRepublic has thorough 
 6. Continue with steps below... 
 #### For those with Existing MDT Deployment Shares:
 1. Download all all files included within this project and copy over A SELECT FEW of them to the respective folders of your deployment share. For example, if your deployment share is "D:\Deploy", then everything in the "Scripts" folder for this project should be copied over to D:\Deploy\Scripts. For files that already exist, I'd encourage you to make a backup of your version before copying this project's version. To do so, simply either rename the file (eg: "CustomSettings.ini" to "CustomSettings.original.ini") or copy it to another location. Note the following files and their usage:
-    * Scripts folder: every file in this folder is safe to copy, as not stock files overwritten.
+    * Scripts folder: every file in this folder is safe to copy, as no stock files overwritten.
     * Control folder: CustomSettings.ini overwrites existing file. Please edit this file as appropriate for your own settings.
     * Control\MY_TASK_SEQ: This folder's name will reflect your own Task Sequence name. Use the Unattend.xml as a reference for changes you can make to your own Unattend.xml file. Do not copy this file. Instead reference it and make changes accordingly The entire oobeSystem section should be tweaked to your own settings.
 2. Launch MDT and confirm that your saved deployment share loads without any errors.
